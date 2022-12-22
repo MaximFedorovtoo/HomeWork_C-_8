@@ -37,14 +37,17 @@ void PrintArray(int [,] array)
 int [,] ProductMatrices(int [,] matrix_1, int [,] matrix_2)
 {
     int [,] result = new int [matrix_1.GetLength(0),matrix_1.GetLength(1)];
+   
     for (int i = 0; i < matrix_1.GetLength(0); i++)
     {
         for (int j = 0; j < matrix_1.GetLength(1); j++)
         {
-            result[j,i] = matrix_1[j,0]*matrix_2[0,i] + matrix_1[j,1]* matrix_2[1,i];
+            for (int c = 0; c < matrix_1.GetLength(0); c++)
+            {
+                result[i,j] = result[i,j]+ matrix_1[i, c] * matrix_2[c, j];
+            }
         }
     }
-    
     return result;
 }
 int [,] matrix_1 = {{2,4},{3,2}};
