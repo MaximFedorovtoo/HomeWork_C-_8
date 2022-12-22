@@ -22,7 +22,7 @@ void PrintMatrix(int [,] matrix_1, int [,] matrix_2)
         Console.WriteLine("");
     }
 }
-void PrintArray(int [,] array)
+void PrintProductMatrices(int [,] array)
 {
     Console.WriteLine("Результирующая матрица:");
     for (int i = 0; i < array.GetLength(0); i++)
@@ -55,5 +55,5 @@ int [,] matrix_2 = {{3,4},{3,3}};
 int [,] result = {};
 result = ProductMatrices(matrix_1, matrix_2);
 PrintMatrix(matrix_1,matrix_2);
-PrintArray(result);
+PrintProductMatrices(result);
 
