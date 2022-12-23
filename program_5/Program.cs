@@ -16,7 +16,7 @@ void PrintArray(int [,] array)
         Console.WriteLine("");
     }
 }
-int [,] AddNumbRound(int [,] array)
+int [,] AddArrayRound(int [,] array)
 {
     
    
@@ -43,5 +43,5 @@ int [,] AddNumbRound(int [,] array)
 }
 
 int [,] array = new int [4,4];
-array = AddNumbRound(array);
+array = AddArrayRound(array);
 PrintArray(array);
