@@ -18,5 +18,36 @@ void PrintArray(int [, ,] array)
         }
     }
 }
+int[,,] RandomNotRepeat(int [,,] array)
+{
+    int minValue = 10;
+    int maxValue = 99;
+    
+    Random rand = new Random();
+    List<int> temp = new List<int>();
+    for (int i = minValue; i < maxValue; i++)
+            {
+                temp.Add(i);
+            }
+    
+    array = new int [array.GetLength(0),array.GetLength(0),array.GetLength(0)];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        { 
+            for (int b = 0; b < array.GetLength(2); b++)
+            {
+                array[i,j,b] = temp[rand.Next(0,temp.Count)];
+                temp.Remove(array[i,j,b]);
+            }
+        
+        }   
+        
+    }
+    Console.WriteLine("Рандомный массив из неповторяющихся двузначных чисел:");
+    return array;
+}
 int [, ,] array = {{{10,22},{33,42}},{{44,55},{66,77}}};
+PrintArray(array);
+array = RandomNotRepeat(array);
 PrintArray(array);
