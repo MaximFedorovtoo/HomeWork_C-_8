@@ -26,9 +26,9 @@ int[,,] RandomNotRepeat(int [,,] array)
     Random rand = new Random();
     List<int> temp = new List<int>();
     for (int i = minValue; i < maxValue; i++)
-            {
-                temp.Add(i);
-            }
+    {
+        temp.Add(i);
+    }
     
     array = new int [array.GetLength(0),array.GetLength(0),array.GetLength(0)];
     for (int i = 0; i < array.GetLength(0); i++)

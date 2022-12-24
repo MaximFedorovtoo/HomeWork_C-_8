@@ -18,28 +18,17 @@ void PrintArray(int [,] array)
 }
 int [,] AddArrayRound(int [,] array)
 {
-    
-   
     int n = array.GetLength(0);
-
-    int i = 0, j = 0;
-
-    int value = 1;
-
-    while (n != 0)
+    int count = 1;
+    for (int i = 0, j = 0, k = 0; n != 0; i++,j++)
     {
-        int k = 0;
-        do { array[i, j++] = value++; } 
-        while (++k < n - 1);
-        for (k = 0; k < n - 1; k++) array[i++, j] = value++;
-        for (k = 0; k < n - 1; k++) array[i, j--] = value++;
-        for (k = 0; k < n - 1; k++) array[i--, j] = value++;
-        ++i; ++j; 
+        for (k = 0; k < n - 1; k++) {array[i, j++] = count++;}
+        for (k = 0; k < n - 1; k++) {array[i++, j] = count++;}
+        for (k = 0; k < n - 1; k++) {array[i, j--] = count++;}
+        for (k = 0; k < n - 1; k++) {array[i--, j] = count++;}
         n = n < 2 ? 0 : n - 2;
     }
     return array;
-    
-    
 }
 
 int [,] array = new int [4,4];
